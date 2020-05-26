@@ -11,9 +11,9 @@ public class ScraperController {
     @Autowired
     ScraperService service;
 
-    @PostMapping(value = "/connections/from/{origin}/to/{departure}")
+    @PostMapping(value = "/connections/from/{origin}/to/{departure}/at/{timestamp}/transportationTypes/{transportationTypes}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Connection> postConnections(@PathVariable String origin, @PathVariable String departure) {
-        return service.loadConnetions(origin, departure);
+    public List<Connection> postConnections(@PathVariable String origin, @PathVariable String departure, @PathVariable long timestamp, @PathVariable String transportationTypes) {
+        return service.loadConnetions(origin, departure, timestamp, transportationTypes);
     }
 }
