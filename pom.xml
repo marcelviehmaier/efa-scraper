@@ -12,6 +12,7 @@
 	<artifactId>efa-bw-scraper</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>efa-bw-scraper</name>
+	<packaging>jar</packaging>
 	<description>web scraper for efa bw</description>
 
 	<properties>

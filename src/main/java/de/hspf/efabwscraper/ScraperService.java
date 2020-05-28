@@ -35,6 +35,8 @@ public class ScraperService {
             final HtmlTextInput inputFieldDay;
             final HtmlTextInput inputFieldMonth;
             final HtmlTextInput inputFieldYear;
+            final HtmlTextInput inputFieldHours;
+            final HtmlTextInput inputFieldMinutes;
             final HtmlCheckBoxInput inputFieldTransportationCheckbox0;
             final HtmlCheckBoxInput inputFieldTransportationCheckbox1;
             final HtmlCheckBoxInput inputFieldTransportationCheckbox2;
@@ -56,6 +58,8 @@ public class ScraperService {
             inputFieldDay = form.getInputByName("itdDateDay");
             inputFieldMonth = form.getInputByName("itdDateMonth");
             inputFieldYear = form.getInputByName("itdDateYear");
+            inputFieldHours = form.getInputByName("itdTimeHour");
+            inputFieldMinutes = form.getInputByName("itdTimeMinute");
             inputFieldTransportationCheckbox0 = form.getInputByName("inclMOT_0");
             inputFieldTransportationCheckbox1 = form.getInputByName("inclMOT_1");
             inputFieldTransportationCheckbox2 = form.getInputByName("inclMOT_2");
@@ -86,6 +90,8 @@ public class ScraperService {
             inputFieldDay.setDefaultValue(date.get(Calendar.DAY_OF_MONTH) + "");
             inputFieldMonth.setDefaultValue(date.get(Calendar.MONTH) + "");
             inputFieldYear.setDefaultValue(date.get(Calendar.YEAR) + "");
+            inputFieldHours.setDefaultValue(date.get(Calendar.HOUR) + "");
+            inputFieldMinutes.setDefaultValue(date.get(Calendar.MINUTE) + "");
             inputFieldTransportationCheckbox0.setChecked(false);
             inputFieldTransportationCheckbox1.setChecked(false);
             inputFieldTransportationCheckbox2.setChecked(false);
