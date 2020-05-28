@@ -90,7 +90,7 @@ public class ScraperService {
             inputFieldDay.setDefaultValue(date.get(Calendar.DAY_OF_MONTH) + "");
             inputFieldMonth.setDefaultValue(date.get(Calendar.MONTH) + "");
             inputFieldYear.setDefaultValue(date.get(Calendar.YEAR) + "");
-            inputFieldHours.setDefaultValue(date.get(Calendar.HOUR) + "");
+            inputFieldHours.setDefaultValue(date.get(Calendar.HOUR_OF_DAY) + "");
             inputFieldMinutes.setDefaultValue(date.get(Calendar.MINUTE) + "");
             inputFieldTransportationCheckbox0.setChecked(false);
             inputFieldTransportationCheckbox1.setChecked(false);
