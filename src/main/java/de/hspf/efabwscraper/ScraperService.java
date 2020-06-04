@@ -14,7 +14,7 @@ import java.util.List;
 public class ScraperService {
     private final String url = "https://www.efa-bw.de/nvbw/XSLT_TRIP_REQUEST2?language=de&itdLPxx_calcMethod=BW&itdLPxx_frames=&sessionID=0&requestID=0&ptOptionsActive=1&useProxFootSearch=1&lineRestriction=400";
 
-    public List<Connection> loadConnetions(String origin, String departure, long timestamp, String transportationTypes) {
+    public List<Connection> loadConnetions(String origin, String departure, long timestamp, String transportationTypes, int routeType) {
         List<Connection> connections = new ArrayList<>();
         Calendar date = Calendar.getInstance();
         date.setTimeInMillis(timestamp);
@@ -48,6 +48,7 @@ public class ScraperService {
             final HtmlCheckBoxInput inputFieldTransportationCheckbox9;
             final HtmlCheckBoxInput inputFieldTransportationCheckbox10;
             final HtmlCheckBoxInput inputFieldTransportationCheckbox11;
+            final List<HtmlRadioButtonInput> radioButtonRouteType;
 
             // Load elements from website
             startPage = webClient.getPage(url);
@@ -71,6 +72,13 @@ public class ScraperService {
             inputFieldTransportationCheckbox9 = form.getInputByName("inclMOT_9");
             inputFieldTransportationCheckbox10 = form.getInputByName("inclMOT_10");
             inputFieldTransportationCheckbox11 = form.getInputByName("inclMOT_11");
+            radioButtonRouteType = form.getRadioButtonsByName("routeType");
+            for (int i = 0; i < radioButtonRouteType.size(); i++){
+                radioButtonRouteType.get(i).setChecked(false);
+                if(i == routeType){
+                    radioButtonRouteType.get(i).setChecked(true);
+                }
+            }
 
             transportationTypeInputs.add(inputFieldTransportationCheckbox0);
             transportationTypeInputs.add(inputFieldTransportationCheckbox1);
